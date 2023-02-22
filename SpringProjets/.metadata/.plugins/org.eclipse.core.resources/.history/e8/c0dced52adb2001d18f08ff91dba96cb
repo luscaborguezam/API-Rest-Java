@@ -1,0 +1,5 @@
+package com.bookmanager.ws.i.model.request;
+
+public class BookDetailRequestModel {
+
+}

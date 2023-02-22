@@ -1,0 +1,6 @@
+package com.bookmanager.ws.ui.controlers;
+
+@RestController
+public class BoockControler {
+
+}

@@ -1,0 +1,41 @@
+package com.bookmanager.ws.ui.controlers;
+
+//requests
+import org.springframework.web.bind.annotation.RestController;
+//endPoint
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
+
+//Essa classe seja capaz de receber requisições HTTP e enviar resposta a aplicação cliente
+@RestController 
+//Fazer mapeamento da URL chamada na requisição e o método implementado no controlador
+@RequestMapping("books") // http://localh'ost:8080/books 
+public class BoockControler{
+	
+	@GetMapping
+	public String getBooks(@RequestParam(value="page" int page)) {
+		return "Retorna a lista de livros";
+	}
+	
+	@GetMapping(path = "/{isbn}")
+	public String getBook(@PathVariable String isbn){
+		return "Retorna a lista de livros cadastrados" + isbn;//
+	}
+	@PostMapping
+	public String createBook(){
+		return "Cria um novo livro";
+	}
+	@PutMapping
+	public String updateBook(){
+		return "Retorna as informações e um determinada livro";
+	}
+	@DeleteMapping
+	public String deleteBook() {
+		return "Deleta um livro";
+	}
+}
